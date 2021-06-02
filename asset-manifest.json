@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/socialnetwokkmsko/static/css/main.1f53b00f.chunk.css",
+    "main.js": "/socialnetwokkmsko/static/js/main.fe2e1652.chunk.js",
+    "main.js.map": "/socialnetwokkmsko/static/js/main.fe2e1652.chunk.js.map",
+    "runtime-main.js": "/socialnetwokkmsko/static/js/runtime-main.1f9f3065.js",
+    "runtime-main.js.map": "/socialnetwokkmsko/static/js/runtime-main.1f9f3065.js.map",
+    "static/js/2.67fc6f42.chunk.js": "/socialnetwokkmsko/static/js/2.67fc6f42.chunk.js",
+    "static/js/2.67fc6f42.chunk.js.map": "/socialnetwokkmsko/static/js/2.67fc6f42.chunk.js.map",
+    "index.html": "/socialnetwokkmsko/index.html",
+    "static/css/main.1f53b00f.chunk.css.map": "/socialnetwokkmsko/static/css/main.1f53b00f.chunk.css.map",
+    "static/js/2.67fc6f42.chunk.js.LICENSE.txt": "/socialnetwokkmsko/static/js/2.67fc6f42.chunk.js.LICENSE.txt",
+    "static/media/download.275b7e7b.png": "/socialnetwokkmsko/static/media/download.275b7e7b.png",
+    "static/media/exit.ff5453a1.jpg": "/socialnetwokkmsko/static/media/exit.ff5453a1.jpg",
+    "static/media/preloader.6af3b8bc.gif": "/socialnetwokkmsko/static/media/preloader.6af3b8bc.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1f9f3065.js",
+    "static/js/2.67fc6f42.chunk.js",
+    "static/css/main.1f53b00f.chunk.css",
+    "static/js/main.fe2e1652.chunk.js"
+  ]
+}
