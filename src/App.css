@@ -1,0 +1,21 @@
+body {
+    color: rgba(255, 255, 255, 0.829);
+    font-size: 20px;
+}
+
+
+.app_wrapper {
+    width: 1200px;
+    margin: 0 auto;
+           display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+}
+
+.dynamic_content {
+    margin-top: 10px;
+    width: 100%;
+}

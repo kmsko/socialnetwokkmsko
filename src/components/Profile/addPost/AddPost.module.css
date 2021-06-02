@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    margin-top: 15px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.in_text {
+    width: 350px;
+    resize: none;
+    border: 3px solid greenyellow;
+    border-radius: 25px;
+    padding: 14px;
+    outline: none;
+    height: 150px;
+}
+
+.push_text {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(217, 255, 0);
+    border-radius: 10px;
+    outline: none;
+    height: 30px;
+    padding: 0 5px 0 5px;
+    margin-top: 15px;
+}

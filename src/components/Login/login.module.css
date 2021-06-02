@@ -1,0 +1,43 @@
+.wrapperFormLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titlePageLogin {
+    text-align: center;
+    margin: 20px;
+    border-bottom: 2px solid rgb(223, 226, 15);
+    display: block;
+    width: 100px;
+    margin: auto;
+}
+
+.textEmail::after {
+    content: " *";
+    color: red;
+}
+
+.textPass::after {
+    content: " *";
+    color: red;
+}
+
+.emailInput {
+    height: 50px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 7px;
+}
+
+.passwordInput {
+    height: 50px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 7px;
+}
+
+.buttonLogin {
+    border: 3px solid gold;
+    font-size: 15px;
+}

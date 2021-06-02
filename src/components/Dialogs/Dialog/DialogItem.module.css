@@ -1,0 +1,29 @@
+.wrapper {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.linkUser {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 1px 0 1px #000, 0 1px 1px #000, -1px 0 1px #000, 0 -1px 1px #000;
+    border: 2px solid rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.activeUser {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    background-color: rgba(196, 255, 138, 0.342);
+    border: 2px solid rgb(255, 230, 0);
+}

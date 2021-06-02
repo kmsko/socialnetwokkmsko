@@ -1,0 +1,75 @@
+.wrap_profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.status {
+    padding: 5px;
+    font-size: inherit;
+    outline: none;
+    width: 300px;
+    height: 150px;
+    word-wrap: break-word;
+    resize: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.status_de {
+    margin-top: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 300px;
+    word-wrap: break-word;
+    background-color: rgba(179, 179, 179, 0.521);
+    max-height: 150px;
+    overflow: auto;
+    position: relative;
+}
+.editOn{
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    position: absolute;
+    right: 5px;
+    background-image: url(../../assets/image/edit.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    border: 1px solid rgb(0, 255, 0);
+}
+.editOff{
+    display: none;
+}
+.status_de::-webkit-scrollbar {
+    width: 7px;
+    background-color: #5c5c5c00;
+}
+
+.status_de::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #1900ff00;
+}
+
+.status_de:hover::-webkit-scrollbar {
+    width: 7px;
+    background-color: #5c5c5c00;
+}
+
+.status_de:hover::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #1900ffe3;
+}
+
+.status::-webkit-scrollbar {
+    width: 7px;
+    background-color: #5c5c5c00;
+}
+
+.status::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #1900ffe3;
+}
