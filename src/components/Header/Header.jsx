@@ -35,7 +35,7 @@ const Header = (props) => {
 
 
       </div>
-
+          <div className={s.online}>Social Network</div>
    
 
       {props.logOn && <button className={s.logout} onClick={props.logout}>
