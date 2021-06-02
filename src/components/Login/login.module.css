@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .titlePageLogin {
@@ -40,4 +41,7 @@
 .buttonLogin {
     border: 3px solid gold;
     font-size: 15px;
+}
+.wrapper_log_pas{
+
 }
