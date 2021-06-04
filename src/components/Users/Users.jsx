@@ -40,13 +40,14 @@ let Users = (props) => {
                 <div className={s.avatar__wrapperr_fullname}>
                     <span className={s.avatar__fullname}> Имя :  {u.name} </span>
                 </div>
-                {props.logOn && u.followed === true ?
+
+                {props.logOn ? u.followed ?
                     <button className={`${s.avatar_button_add} ${s.avatar_button}`} disabled={props.followingProgres.some(id => id === u.id)} onClick={() => {
                         props.unfollow(u.id)
                     }} > удалить </button> :
                     <button className={`${s.avatar_button_del} ${s.avatar_button}`} disabled={props.followingProgres.some(id => id === u.id)} onClick={() => {
                         props.follow(u.id)
-                    }}> добавить </button>}
+                    }}> добавить </button> : null}
 
             </div>
             )

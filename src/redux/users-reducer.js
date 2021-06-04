@@ -77,50 +77,37 @@ export const activePage = (numberPage) => ({ type: ACTIVE_PAGE, numberPage });
 export const fetching = (bool) => ({ type: IS_FETCHING, bool });
 export const followingProgresAC = (isFetching, userId) => ({ type: IS_FOLLOWING, isFetching, userId });
 
-export const getUsersThunkCreator = (curentPage, pageSize) => {
-    return (dispatch) => {
-        dispatch(fetching(true));
-        UsersAPI.getUsers(curentPage, pageSize).then(data => {
-            dispatch(setUsers(data.items));
-            dispatch(setTotalCount(data.totalCount));
-            dispatch(fetching(false));
-        });
-    }
-
+export const getUsersThunkCreator = (curentPage, pageSize) => async (dispatch) => {
+    dispatch(fetching(true));
+    let data = await UsersAPI.getUsers(curentPage, pageSize)
+    dispatch(setUsers(data.data.items));
+    dispatch(setTotalCount(data.data.totalCount));
+    dispatch(fetching(false));
 }
-export const follow = (userId) => {
-    return (dispatch) => {
-
-        dispatch(followingProgresAC(true, userId));
-        UsersAPI.followAPI(userId).then(resultCode => {
-            if (resultCode === 0) {
-                dispatch(followAC(userId));
-                dispatch(followingProgresAC(false, userId));
-            }
-        });
+export const follow = (userId) => async (dispatch) => {
+    dispatch(followingProgresAC(true, userId));
+    let response = await UsersAPI.followAPI(userId)
+    if (response.data.resultCode === 0) {
+        dispatch(followAC(userId));
+        dispatch(followingProgresAC(false, userId));
     }
 }
-export const unfollow = (userId) => {
-    return (dispatch) => {
-        dispatch(followingProgresAC(true, userId));
-        UsersAPI.unfollowAPI(userId).then(resultCode => {
-            if (resultCode === 0) {
-                dispatch(unfollowAC(userId));
-                dispatch(followingProgresAC(false, userId));
-            }
-        });
+export const unfollow = (userId) => async (dispatch) => {
+    
+    dispatch(followingProgresAC(true, userId));
+    let resultCode = await UsersAPI.unfollowAPI(userId)
+    if (resultCode.data.resultCode === 0) {
+        dispatch(unfollowAC(userId));
+        dispatch(followingProgresAC(false, userId));
     }
 }
-export const onClickUsersPage = (numberPage, pageSize) => {
-    return (dispatch) => {
-        dispatch(activePage(numberPage));
-        dispatch(fetching(true));
-        UsersAPI.getUsers(numberPage, pageSize).then(data => {
-            dispatch(setUsers(data.items));
-            dispatch(fetching(false));
-        });
-    }
+export const onClickUsersPage = (numberPage, pageSize) => async (dispatch) => {
+    
+    dispatch(activePage(numberPage));
+    dispatch(fetching(true));
+    let data = await UsersAPI.getUsers(numberPage, pageSize)
+    dispatch(setUsers(data.data.items));
+    dispatch(fetching(false));
 }
-
 export default usersReducer;
 

@@ -30,7 +30,7 @@ const profileReducer = (state = initialState, action) => {
             }
             return {
                 ...state,
-                myPosts: [ newPost, ...state.myPosts],
+                myPosts: [newPost, ...state.myPosts],
                 textPost: ""
             }
         // Обновляет и отображает буквы в поле создания ПОСТА
@@ -71,40 +71,26 @@ const setUserStatusAC = (status) => ({ type: SET_USER_STATUS, status });
 const setUserProfile = (profile) => ({ type: SET_USER_PROFILE, profile });
 const setPhotoProfile = (photoAva) => ({ type: SET_PHOTO_PROFILE, photoAva });
 
-export const getProfileThunkAPI = (userId) => {
-    return (dispatch) => {
-        dispatch(fetchingProfile(true))
-        ProfileAPI.getUserProfile(userId).then(response => {
-            
-            dispatch(setUserProfile(response));
-            dispatch(fetchingProfile(false));
-        })
-
-    }
+export const getProfileThunkAPI = (userId) => async (dispatch) => {
+    dispatch(fetchingProfile(true))
+    let response = await ProfileAPI.getUserProfile(userId)
+    dispatch(setUserProfile(response.data));
+    dispatch(fetchingProfile(false));
 }
-export const getUserStatusThunk = (userId) => {
-    return (dispatch) => {
-        ProfileAPI.getUserStatus(userId).then(response => {
-            dispatch(setUserStatusAC(response.data))
-        })
-    }
+export const getUserStatusThunk = (userId) => async (dispatch) => {
+    let response = await ProfileAPI.getUserStatus(userId)
+    dispatch(setUserStatusAC(response.data))
 }
 
-export const setUserStatusThunk = (status) => {
-    return (dispatch) => {
-        ProfileAPI.setUserStatus(status).then(response => {
-            dispatch(setUserStatusAC(status))
-        })
-    }
+export const setUserStatusThunk = (status) => async (dispatch) => {
+    let response = await ProfileAPI.setUserStatus(status)
+    dispatch(setUserStatusAC(status))
 }
-export const savePhotoThunk = (file) => {
 
-    return (dispatch) => {
-        ProfileAPI.savePhoto(file).then(response => {
-            if (response.data.resultCode === 0)
-                dispatch(setPhotoProfile(response.data.data.photos))
-        })
-    }
+export const savePhotoThunk = (file) => async (dispatch) => {
+    let response = await ProfileAPI.savePhoto(file)
+    if (response.data.resultCode === 0)
+        dispatch(setPhotoProfile(response.data.data.photos))
 }
 
 export default profileReducer;
